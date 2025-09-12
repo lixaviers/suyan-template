@@ -1,0 +1,74 @@
+.app-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  .sidebar-container {
+    -webkit-transition: width 0.28s;
+    transition: width 0.28s;
+    width: 200px !important;
+    height: 100%;
+    position: fixed;
+    font-size: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    overflow: hidden;
+    -webkit-box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+    background-color: #545c64;
+
+    .horizontal-collapse-transition {
+      transition:
+        0s width ease-in-out,
+        0s padding-left ease-in-out,
+        0s padding-right ease-in-out;
+    }
+
+    .scrollbar-wrapper {
+      overflow-x: hidden !important;
+    }
+
+    .el-scrollbar {
+      height: 100%;
+    }
+
+    .el-menu {
+      border-right: 0;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .logo {
+      position: relative;
+      width: 100%;
+      background: #545c64;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+
+      .logo-link {
+        height: 100%;
+        width: 100%;
+
+        .sidebar-logo {
+          width: 100%;
+          vertical-align: middle;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
+  .main-container {
+    min-height: 100%;
+    transition: margin-left 0.28s;
+    margin-left: 200px;
+    position: relative;
+  }
+}
