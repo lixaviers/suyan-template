@@ -9,7 +9,7 @@
     @close="handleClose"
     mode="vertical"
   >
-    <menuItem v-for="item in menuList" :item="item" />
+    <menuItem v-for="item in noHiddenRoutes" :item="item" :base-path="item.path" />
   </el-menu>
 </template>
 
@@ -17,8 +17,10 @@
   import { computed, ref } from 'vue';
   import { useRoute } from 'vue-router';
   import menuItem from './menu-item.vue';
+  import usePermissionStore from '/@/store/module/permission';
 
   const route = useRoute();
+  const permissionStore = usePermissionStore();
 
   const props = defineProps({
     collapsed: {
@@ -28,18 +30,7 @@
   });
 
   const activeMenu = computed(() => route.meta.activeMenu || route.path);
-
-  const menuList = [
-    {
-      path: '/1',
-      name: '2',
-      meta: { title: '1', icon: 'Plus' },
-      component: undefined,
-      children: [{ path: '/111', name: '111', meta: { title: '4', icon: 'Plus' }, component: undefined }],
-    },
-    { path: '/2', name: '2', meta: { title: '2', icon: 'Plus' }, component: undefined },
-    { path: '/3', name: '3', meta: { title: '3', icon: 'Plus' }, component: undefined },
-  ];
+  const noHiddenRoutes = computed(() => permissionStore.routes.filter((item) => !item.meta?.hidden));
 
   const handleOpen = (key, keyPath) => {
     console.log(key, keyPath);

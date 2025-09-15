@@ -38,7 +38,7 @@
   import { ref, reactive } from 'vue';
   import { ElMessage } from 'element-plus';
   import { User, Lock } from '@element-plus/icons-vue';
-  import { setToken } from '/@/utils/auth';
+  import { setToken } from '/@/utils/cache';
   import { PAGE_PATH_HOME } from '/@/constants/common-const';
 
   const router = useRouter();

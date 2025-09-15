@@ -23,4 +23,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
 
-app.mount('#app');
+// router 准备就绪后挂载应用
+router.isReady().then(() => {
+  app.mount('#app');
+});

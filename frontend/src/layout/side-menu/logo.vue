@@ -1,7 +1,17 @@
 <template>
   <div class="logo">
-    <router-link key="expand" class="logo-link" to="/index" style="padding-top: 15px">
-      <img src="https://file.tu-bo.com/file/2025/03/117b9aa68e33d143a2898714b442b2ce2e.png" width="128" height="30" />
+    <router-link class="logo-link" :to="PAGE_PATH_HOME">
+      <div v-if="props.collapsed" class="title">后台</div>
+      <div v-else class="title">后台管理系统</div>
     </router-link>
   </div>
 </template>
+
+<script setup>
+  import { PAGE_PATH_HOME } from '/@/constants/common-const';
+  const props = defineProps({
+    collapsed: {
+      type: Boolean,
+    },
+  });
+</script>
