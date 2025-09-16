@@ -40,6 +40,17 @@
 
     .el-menu {
       border-right: 0;
+
+      .el-menu-item {
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.06);
+          color: #ffffff;
+        }
+      }
+
+      .router-link-active {
+        background-color: var(--el-color-primary);
+      }
     }
 
     a {
@@ -67,7 +78,6 @@
           vertical-align: middle;
           color: #fff;
           font-size: 20px;
-          border-bottom: 1px solid #d6d2d2;
         }
       }
     }
@@ -87,10 +97,98 @@
       height: 50px;
       position: relative;
       background: #fff;
+      display: flex;
+
+      .right-menu {
+        margin-right: 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .right-menu-item {
+          display: flex;
+          align-items: center;
+
+          .el-avatar {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .tags-view-container {
       box-shadow:
         0 1px 3px #0000001f,
         0 0 3px #0000000a;
+      height: 36px;
+      width: 100%;
+      color: #606266;
+      overflow: hidden;
       display: flex;
+
+      .tags-view {
+        width: calc(100% - 40px);
+
+        .tags-view-item {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          cursor: pointer;
+          height: 28px;
+          line-height: 28px;
+          border: 1px solid #ebeef5;
+          border-radius: 2px;
+          background-color: #ffffff;
+          padding: 0 10px 0 15px;
+          font-size: 14px;
+          margin: 4px 6px 0 4px;
+
+          &.affix {
+            padding-left: 10px;
+          }
+
+          &.active {
+            background-color: #e6f4ff;
+            color: #1677ff;
+            border-color: var(--el-color-primary);
+          }
+
+          .el-icon {
+            margin-left: 5px;
+            margin-right: 1px;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .tags-view-operate {
+        width: 40px;
+        height: 25px;
+        font-size: 17px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 40px;
+        padding-right: 10px;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--el-color-primary);
+        }
+
+        .tags-view-operate-icon {
+          width: 20px;
+          height: 20px;
+          transition: all 1s;
+          transform-origin: 10px 20px;
+
+          &:hover {
+            width: 20px;
+            height: 20px;
+            transform: rotate(360deg);
+          }
+        }
+      }
     }
   }
 }

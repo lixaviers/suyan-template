@@ -11,7 +11,6 @@ const usePermissionStore = defineStore('permission', {
     },
     set() {
       this.routes = routerArray;
-      console.log('routes', this.routes);
     },
   },
 });

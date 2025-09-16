@@ -3,6 +3,7 @@
     <suyanSider :class="collapsed ? 'collapse' : ''" class="sidebar-container" :collapsed="collapsed" />
     <div class="main-container" :class="collapsed ? 'collapse' : ''">
       <suyanNavbar />
+      <tagsView />
       <router-view />
     </div>
   </div>
@@ -11,6 +12,7 @@
 <script setup>
   import suyanSider from './side-menu/index.vue';
   import suyanNavbar from './navbar/index.vue';
+  import tagsView from './tags-view/index.vue';
   import useAppStore from '/@/store/module/app';
   import { computed } from 'vue';
 

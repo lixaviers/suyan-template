@@ -1,5 +1,11 @@
 # Changelog
 
+## 2025-09-16
+
+### Features
+
+- 🚀 增加 tags view
+
 ## 2025-09-15
 
 ### Features

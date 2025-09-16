@@ -6,6 +6,7 @@ import { getToken } from '/@/utils/cache';
 import { routerArray } from './routers';
 import { setRouteChange } from '/@/utils/useRouteListener';
 import usePermissionStore from '/@/store/module/permission';
+import { setTitle } from '/@/utils/dynamicTitle';
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -47,7 +48,7 @@ router.beforeEach(async (to, from, next) => {
 
 // ----------------------- 路由加载后 -----------------------
 router.afterEach((to) => {
-  console.log(to);
+  setTitle(to.meta.title);
   setRouteChange(to);
   nProgress.done();
 });

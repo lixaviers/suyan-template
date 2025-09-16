@@ -11,7 +11,6 @@ const useAppStore = defineStore('app', {
   actions: {
     setSidebarOpen() {
       this.sidebar.open = !this.sidebar.open;
-      console.log(this.sidebar.open);
       setSidebarOpenCache(this.sidebar.open);
     },
   },

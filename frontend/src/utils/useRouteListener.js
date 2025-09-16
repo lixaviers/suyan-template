@@ -10,7 +10,6 @@ let latestRoute;
  * 设置最新的路由信息，触发路由变化事件
  */
 export function setRouteChange(to) {
-  console.log('set', to);
   // 触发事件
   emitter.emit(key, to);
   // 缓存最新的路由信息
@@ -26,7 +25,6 @@ export function useRouteListener() {
 
   // 监听路由变化（可以选择立即执行）
   const listenerRouteChange = (callback, immediate = false) => {
-    console.log('listenerRouteChange', 1);
     // 缓存回调函数
     callbackList.push(callback);
     // 监听事件

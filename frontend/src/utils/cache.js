@@ -16,3 +16,27 @@ export function getSidebarOpenCache() {
 export function setSidebarOpenCache(val) {
   localStorage.setItem(SidebarOpenKey, val);
 }
+
+const VisitedViewsKey = 'VisitedViewsKey';
+export function getVisitedViewsCache() {
+  const cache = localStorage.getItem(VisitedViewsKey);
+  if (cache) {
+    return JSON.parse(cache);
+  }
+  return [];
+}
+export function setVisitedViewsCache(views) {
+  localStorage.setItem(VisitedViewsKey, JSON.stringify(views));
+}
+
+const CachedViewsKey = 'CachedViewsKey';
+export function getCachedViewsCache() {
+  const cache = localStorage.getItem(CachedViewsKey);
+  if (cache) {
+    return JSON.parse(cache);
+  }
+  return [];
+}
+export function setCachedViewsCache(views) {
+  localStorage.setItem(CachedViewsKey, JSON.stringify(views));
+}

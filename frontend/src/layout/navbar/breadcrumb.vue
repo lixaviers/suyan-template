@@ -50,6 +50,7 @@
 <style lang="scss" scoped>
   .el-breadcrumb {
     line-height: 50px;
+    flex: 1;
     .no-redirect {
       color: var(--el-text-color-placeholder);
     }

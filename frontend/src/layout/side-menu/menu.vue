@@ -1,8 +1,8 @@
 <template>
   <el-menu
     background-color="#545c64"
-    text-color="#fff"
-    active-text-color="#ffd04b"
+    text-color="#ffffffa6"
+    active-text-color="#fff"
     :collapse="props.collapsed"
     :default-active="activeMenu"
     @open="handleOpen"
@@ -33,9 +33,9 @@
   const noHiddenRoutes = computed(() => permissionStore.routes.filter((item) => !item.meta?.hidden));
 
   const handleOpen = (key, keyPath) => {
-    console.log(key, keyPath);
+    // console.log(key, keyPath);
   };
   const handleClose = (key, keyPath) => {
-    console.log(key, keyPath);
+    // console.log(key, keyPath);
   };
 </script>

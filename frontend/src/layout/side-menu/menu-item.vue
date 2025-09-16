@@ -34,7 +34,6 @@
     basePath: String,
   });
 
-  console.log(props.item);
   /**
    * 显示的子菜单
    */

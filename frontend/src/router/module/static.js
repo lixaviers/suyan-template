@@ -12,9 +12,12 @@ export const homeRouters = [
         path: PAGE_PATH_HOME,
         name: 'Home',
         meta: {
+          // 设置侧边栏和面包屑中展示的名称
           title: '首页',
           icon: 'HomeFilled',
           parentMenu: '_home',
+          // 是否固定在tags-view中
+          affix: true,
         },
         component: () => import('/@/views/HomeView.vue'),
       },
