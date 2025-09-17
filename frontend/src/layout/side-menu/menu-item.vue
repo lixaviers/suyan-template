@@ -2,8 +2,8 @@
   <template v-if="theOnlyOneChild && !theOnlyOneChild.children">
     <suyanLink v-if="theOnlyOneChild.meta" :to="resolvePath(theOnlyOneChild.path)">
       <el-menu-item :index="resolvePath(theOnlyOneChild.path)">
+        <component v-if="theOnlyOneChild.meta.icon" :is="theOnlyOneChild.meta.icon" class="el-icon" />
         <template #title>
-          <component v-if="theOnlyOneChild.meta.icon" :is="theOnlyOneChild.meta.icon" class="el-icon" />
           <span v-if="theOnlyOneChild.meta.title" class="title">{{ theOnlyOneChild.meta.title }}</span>
         </template>
       </el-menu-item>

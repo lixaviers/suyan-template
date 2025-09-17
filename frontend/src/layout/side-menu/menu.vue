@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    background-color="#545c64"
+    background-color="#001529"
     text-color="#ffffffa6"
     active-text-color="#fff"
     :collapse="props.collapsed"

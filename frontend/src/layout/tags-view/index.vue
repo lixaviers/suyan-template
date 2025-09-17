@@ -1,17 +1,20 @@
 <template>
   <div class="tags-view-container">
     <div class="tags-view">
-      <router-link
-        v-for="item in tagsViewStore.visitedViews"
-        :to="{ path: item.path, query: item.query }"
-        class="tags-view-item"
-        :class="{ active: isActive(item), affix: isAffix(item) }"
-      >
-        {{ item.meta?.title }}
-        <el-icon v-if="!isAffix(item)" :size="12" @click.prevent.stop="closeSelectedTag(item)">
-          <Close />
-        </el-icon>
-      </router-link>
+      <suyanScroll>
+        <router-link
+          v-for="item in tagsViewStore.visitedViews"
+          :to="{ path: item.path, query: item.query }"
+          :data-path="item.path"
+          class="tags-view-item"
+          :class="{ active: isActive(item), affix: isAffix(item) }"
+        >
+          {{ item.meta?.title }}
+          <el-icon v-if="!isAffix(item)" :size="12" @click.prevent.stop="closeSelectedTag(item)">
+            <Close />
+          </el-icon>
+        </router-link>
+      </suyanScroll>
     </div>
     <el-dropdown @command="onCommand">
       <div class="tags-view-operate">
@@ -36,6 +39,7 @@
   import usePermissionStore from '/@/store/module/permission';
   import path from 'path-browserify';
   import { useRouteListener } from '/@/utils/useRouteListener';
+  import suyanScroll from './scroll.vue';
 
   const route = useRoute();
   const router = useRouter();
@@ -112,15 +116,14 @@
   }
 
   function onCommand(command) {
-    switch (command) {
-      case 'closeOther':
-        tagsViewStore.delOthersVisitedViews(route);
-        tagsViewStore.delOthersCachedViews(route);
-      case 'closeAll':
-        tagsViewStore.delAllVisitedViews();
-        tagsViewStore.delAllCachedViews();
-        if (affixTags.value.some((tag) => tag.path === route.path)) return;
-        toLastView(tagsViewStore.visitedViews);
+    if (command === 'closeOther') {
+      tagsViewStore.delOthersVisitedViews(route);
+      tagsViewStore.delOthersCachedViews(route);
+    } else if (command === 'closeAll') {
+      tagsViewStore.delAllVisitedViews();
+      tagsViewStore.delAllCachedViews();
+      if (affixTags.value.some((tag) => tag.path === route.path)) return;
+      toLastView(tagsViewStore.visitedViews);
     }
   }
 

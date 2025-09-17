@@ -53,6 +53,36 @@ export const homeRouters = [
         },
         component: () => import('/@/views/test2.vue'),
       },
+      {
+        path: '/test3',
+        name: 'test3',
+        meta: {
+          title: '测试2',
+          icon: 'HomeFilled',
+          parentMenu: 'test',
+        },
+        component: () => import('/@/views/test2.vue'),
+      },
+      {
+        path: '/test4',
+        name: 'test4',
+        meta: {
+          title: '测试4',
+          icon: 'HomeFilled',
+          parentMenu: 'test',
+        },
+        component: () => import('/@/views/test2.vue'),
+      },
+      {
+        path: '/test5',
+        name: 'test5',
+        meta: {
+          title: '测试5',
+          icon: 'HomeFilled',
+          parentMenu: 'test',
+        },
+        component: () => import('/@/views/test2.vue'),
+      },
     ],
   },
 ];

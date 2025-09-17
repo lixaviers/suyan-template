@@ -1,3 +1,5 @@
+@use '/@/assets/css/variables.scss' as *;
+
 .app-wrapper {
   position: relative;
   height: 100%;
@@ -6,7 +8,7 @@
   .sidebar-container {
     -webkit-transition: width 0.28s;
     transition: width 0.28s;
-    width: 200px !important;
+    width: $base-sidebar-width !important;
     height: 100%;
     position: fixed;
     font-size: 0px;
@@ -17,7 +19,7 @@
     overflow: hidden;
     -webkit-box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
     box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
-    background-color: #545c64;
+    background-color: #001529;
 
     &.collapse {
       width: 60px !important;
@@ -62,7 +64,7 @@
     .logo {
       position: relative;
       width: 100%;
-      background: #545c64;
+      background: #001529;
       text-align: center;
       overflow: hidden;
       white-space: nowrap;
@@ -86,7 +88,7 @@
   .main-container {
     min-height: 100%;
     transition: margin-left 0.28s;
-    margin-left: 200px;
+    margin-left: $base-sidebar-width;
     position: relative;
 
     &.collapse {
