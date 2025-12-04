@@ -6,7 +6,7 @@
 ### **技术体系**
 
 - 前端：JavaScript + Vue3 + Vite7 + Pinia + Element-Plus
-- 后端：Java8 + SpringBoot2 + Mybatis-Plus + Mysql
+- 后端：Java17 + SpringBoot3 + Mybatis-Plus + Mysql
 
 ### 项目文档 📚
 
