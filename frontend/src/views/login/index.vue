@@ -40,6 +40,7 @@
   import { User, Lock } from '@element-plus/icons-vue';
   import { setToken } from '/@/utils/cache';
   import { PAGE_PATH_HOME } from '/@/constants/common-const';
+  import { useRouter } from 'vue-router';
 
   const router = useRouter();
 
@@ -79,7 +80,7 @@
         loading.value = false;
         ElMessage.success('登录成功！');
         setToken('11111');
-        router({ path: PAGE_PATH_HOME });
+        router.push({ path: PAGE_PATH_HOME });
       }, 1500);
     } catch (error) {
       loading.value = false;
