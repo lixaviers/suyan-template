@@ -1,4 +1,4 @@
-package com.suyan.backend.modules.system.model;
+package com.suyan.backend.modules.system.domain.model;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.suyan.base.query.SuyanLambdaQueryWrapper;

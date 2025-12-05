@@ -1,9 +1,9 @@
 package com.suyan.backend.modules.system.controller;
 
-import com.suyan.backend.modules.system.req.SysMenuDto;
-import com.suyan.backend.modules.system.req.SysMenuQueryDto;
-import com.suyan.backend.modules.system.resp.SysMenuListVo;
-import com.suyan.backend.modules.system.resp.SysMenuDetailVo;
+import com.suyan.backend.modules.system.domain.dto.SysMenuDto;
+import com.suyan.backend.modules.system.domain.dto.SysMenuQueryDto;
+import com.suyan.backend.modules.system.domain.vo.SysMenuListVo;
+import com.suyan.backend.modules.system.domain.vo.SysMenuDetailVo;
 import com.suyan.base.domain.PageResultVo;
 import com.suyan.base.web.CommonController;
 import com.suyan.base.domain.Result;
@@ -28,21 +28,21 @@ public class SysMenuController extends CommonController {
 
     private final SysMenuService sysMenuService;
 
-    @Operation(summary = "新增菜单表", description = "新增菜单表")
+    @Operation(summary = "新增菜单表")
     @PostMapping("add")
     public Result add(@Validated @RequestBody SysMenuDto dto) {
         sysMenuService.createSysMenu(dto);
         return Result.success();
     }
 
-    @Operation(summary = "编辑菜单表", description = "编辑菜单表")
+    @Operation(summary = "编辑菜单表")
     @PostMapping("update")
     public Result update(@Validated @RequestBody SysMenuDto dto) {
         sysMenuService.updateSysMenu(dto);
         return Result.success();
     }
 
-    @Operation(summary = "删除菜单表", description = "删除菜单表")
+    @Operation(summary = "删除菜单表")
     @PostMapping("delete")
     @Parameter(name = "id", description = "id", required = true)
     public Result delete(@RequestParam Long id) {
@@ -57,7 +57,7 @@ public class SysMenuController extends CommonController {
         return Result.success(sysMenuService.getSysMenu(id));
     }
 
-    @Operation(summary = "分页获取菜单表列表信息", description = "分页获取菜单表列表信息")
+    @Operation(summary = "分页获取菜单表列表信息")
     @PostMapping("page")
     public Result<PageResultVo<SysMenuListVo>> pageSysMenu(@Validated @RequestBody SysMenuQueryDto dto) {
         return Result.success(sysMenuService.pageSysMenu(dto));

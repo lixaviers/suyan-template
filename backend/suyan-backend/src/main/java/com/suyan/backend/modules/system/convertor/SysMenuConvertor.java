@@ -2,10 +2,10 @@ package com.suyan.backend.modules.system.convertor;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
-import com.suyan.backend.modules.system.model.SysMenu;
-import com.suyan.backend.modules.system.req.SysMenuDto;
-import com.suyan.backend.modules.system.resp.SysMenuDetailVo;
-import com.suyan.backend.modules.system.resp.SysMenuListVo;
+import com.suyan.backend.modules.system.domain.model.SysMenu;
+import com.suyan.backend.modules.system.domain.dto.SysMenuDto;
+import com.suyan.backend.modules.system.domain.vo.SysMenuDetailVo;
+import com.suyan.backend.modules.system.domain.vo.SysMenuListVo;
 
 import java.util.ArrayList;
 import java.util.List;

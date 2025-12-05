@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO" monitorInterval="30">
     <Properties>
-        <Property name="log-directory" value="${spring:project.log-directory}"/>
+        <Property name="log-directory" value="${spring:suyan.log.directory}"/>
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">

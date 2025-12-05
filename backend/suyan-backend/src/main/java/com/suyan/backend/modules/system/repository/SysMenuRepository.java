@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.hutool.core.util.ObjectUtil;
 import com.suyan.base.exception.ServiceException;
 import com.suyan.backend.modules.system.dao.SysMenuMapper;
-import com.suyan.backend.modules.system.model.SysMenu;
+import com.suyan.backend.modules.system.domain.model.SysMenu;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

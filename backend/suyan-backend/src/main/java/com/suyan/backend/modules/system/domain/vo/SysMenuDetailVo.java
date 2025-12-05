@@ -1,16 +1,23 @@
-package com.suyan.backend.modules.system.req;
+package com.suyan.backend.modules.system.domain.vo;
 
-import com.suyan.base.domain.QueryDto;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-@Schema(description = "菜单表查询入参")
-public class SysMenuQueryDto extends QueryDto {
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString(callSuper = true)
+@Schema(description = "菜单表详细出参")
+public class SysMenuDetailVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
 
     @Schema(description = "菜单id")
     private Long id;
@@ -42,24 +49,17 @@ public class SysMenuQueryDto extends QueryDto {
     @Schema(description = "是否启用")
     private Byte isEnabled;
 
-    @Schema(description = "创建时间起")
-    private LocalDateTime createTimeFrom;
-
-    @Schema(description = "创建时间止")
-    private LocalDateTime createTimeTo;
+    @Schema(description = "创建时间")
+    private LocalDateTime createTime;
 
     @Schema(description = "创建人id")
     private Long createUserId;
 
-    @Schema(description = "更新时间起")
-    private LocalDateTime updateTimeFrom;
-
-    @Schema(description = "更新时间止")
-    private LocalDateTime updateTimeTo;
+    @Schema(description = "更新时间")
+    private LocalDateTime updateTime;
 
     @Schema(description = "更新人id")
     private Long updateUserId;
-
 
 
 }

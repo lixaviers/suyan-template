@@ -1,4 +1,4 @@
-package com.suyan.backend.modules.system.resp;
+package com.suyan.backend.modules.system.domain.vo;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -13,38 +13,23 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Schema(description = "菜单表详细出参")
-public class SysMenuDetailVo implements Serializable {
+@Schema(description = "角色表列表出参")
+public class SysRoleListVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
 
-    @Schema(description = "菜单id")
+    @Schema(description = "角色id")
     private Long id;
 
-    @Schema(description = "父菜单id")
-    private Long parentId;
+    @Schema(description = "角色编码")
+    private String roleCode;
 
-    @Schema(description = "菜单名称")
-    private String menuName;
+    @Schema(description = "角色名称")
+    private String roleName;
 
-    @Schema(description = "菜单类型")
-    private Byte menuType;
-
-    @Schema(description = "路由路径")
-    private String menuPath;
-
-    @Schema(description = "组件路径")
-    private String menuComponent;
-
-    @Schema(description = "图标")
-    private String menuIcon;
-
-    @Schema(description = "排序")
-    private Integer menuSort;
-
-    @Schema(description = "权限标识")
-    private String menuPermission;
+    @Schema(description = "角色描述")
+    private String remarks;
 
     @Schema(description = "是否启用")
     private Byte isEnabled;
@@ -60,6 +45,5 @@ public class SysMenuDetailVo implements Serializable {
 
     @Schema(description = "更新人id")
     private Long updateUserId;
-
 
 }

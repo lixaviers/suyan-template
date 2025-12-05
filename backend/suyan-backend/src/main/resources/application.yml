@@ -2,8 +2,9 @@ server:
   port: 1024
   servlet:
     context-path: /
-
 spring:
+  profiles:
+    active: local
   datasource:
     url: jdbc:p6spy:mysql://127.0.0.1:3306/suyan_template?autoReconnect=true&useServerPreparedStmts=false&rewriteBatchedStatements=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     username: root
@@ -16,3 +17,7 @@ spring:
     time-between-eviction-runs-millis: 60000
     min-evictable-idle-time-millis: 300000
     filters: stat
+
+suyan:
+  log:
+    directory: ./logs
